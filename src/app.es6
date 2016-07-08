@@ -103,12 +103,25 @@ var UsersDetail = React.createClass({
   }
 });
 
+var UsersCreate = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <div>Name <input type="text"/></div>
+                <div>Email <input type="text"/></div>
+                <button onClick="clickHandler">Create User</button>
+            </div>
+        );
+    }
+});
+
 var MainLayout = React.createClass({
     render: function() {
         return (<div>
                   <span>Header:</span>
                   <Link to="/">Home</Link> |
-                  <Link to="/users">Users</Link>
+                  <Link to="/users">Users</Link> |
+                  <Link to="/users/create">New User</Link>
                   <hr/>
                   <div>
                     <h2>Body Content</h2>
@@ -125,6 +138,7 @@ ReactDOM.render((
       <Route path="/" component={Home} />
       <Route path="/users" component={Users} />
       <Route path="/users/:id" component={UsersDetail} />
+      <Route path="/users/create" component={UsersCreate} />
     </Route>
   </Router>
 ), document.getElementById('app'));
