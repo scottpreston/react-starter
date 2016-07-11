@@ -1,5 +1,5 @@
 import React from 'react'
-import {Hello} from '../src/Hello.js';
+import {Hello} from '../src/components/Hello.js';
 import { assert } from 'chai'
 
 //var Hello = require('../src/Hello.es6');

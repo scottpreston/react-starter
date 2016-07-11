@@ -16,7 +16,7 @@
   "scripts": {
     "build": "babel src -d lib",
     "ify": "browserify lib/*.js -o dist/app.js",
-    "pack": "webpack ./lib/app.js ./dist/app.bundle.js",
+    "pack": "webpack ./lib/index.js ./dist/app.bundle.js",
     "prestart": "npm run build && npm run pack",
     "start": "http-server -p 5000",
     "test" : "babel-node node_modules/mocha/bin/_mocha -- tests/*.js",
