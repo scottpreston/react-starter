@@ -20,7 +20,7 @@
     "prestart": "npm run build && npm run pack",
     "start": "http-server -p 5000",
     "test" : "babel-node node_modules/mocha/bin/_mocha -- tests/*.js",
-    "coverage" : "babel-node node_modules/isparta/bin/isparta cover --report html node_modules/mocha/bin/_mocha -- tests/*.js"
+    "coverage" : "babel-node node_modules/isparta/bin/isparta cover  --include-all-sources --report html node_modules/mocha/bin/_mocha -- tests/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
