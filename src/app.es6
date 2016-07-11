@@ -90,6 +90,7 @@ class Users extends React.Component {
   }
 }
 
+
 var UsersDetail = React.createClass({
     render: function() {
       var id = this.props.params.id;
