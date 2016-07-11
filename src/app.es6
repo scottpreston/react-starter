@@ -42,12 +42,17 @@ class Users extends React.Component {
 
   componentDidMount() {
     var self = this;
-    $.getJSON('/data.json').done(function (data) {
-      userList = data.list;
-      self.setState({
-        list : data.list
-      });
-    });
+    
+        $.getJSON('/data.json').done(function (data) {
+            if(userList.length == 0) {
+                userList = data.list;
+            }
+            self.setState({
+                list : userList
+            });
+        });
+    
+    
 
     // magic of redux here below ,this listens for chagnes to the dummy store and udpates the state
     dummyStore.subscribe(function() {
@@ -104,12 +109,23 @@ var UsersDetail = React.createClass({
 });
 
 var UsersCreate = React.createClass({
+    clickHandler: function (event) {
+        var name, email;
+        
+        name = document.getElementById('name').value;
+        email = document.getElementById('email').value;
+        
+        dummyStore.dispatch({
+          type: 'ADD_USER',
+          user: {name: name, email: email}
+        });
+    },
     render: function () {
         return (
             <div>
-                <div>Name <input type="text"/></div>
-                <div>Email <input type="text"/></div>
-                <button onClick="clickHandler">Create User</button>
+                <div>Name <input id="name" type="text"/></div>
+                <div>Email <input id="email" type="text"/></div>
+                <button onClick={this.clickHandler}>Create User</button>
             </div>
         );
     }
@@ -121,7 +137,7 @@ var MainLayout = React.createClass({
                   <span>Header:</span>
                   <Link to="/">Home</Link> |
                   <Link to="/users">Users</Link> |
-                  <Link to="/users/create">New User</Link>
+                  <Link to="/users-create">New User</Link>
                   <hr/>
                   <div>
                     <h2>Body Content</h2>
@@ -138,7 +154,7 @@ ReactDOM.render((
       <Route path="/" component={Home} />
       <Route path="/users" component={Users} />
       <Route path="/users/:id" component={UsersDetail} />
-      <Route path="/users/create" component={UsersCreate} />
+      <Route path="/users-create" component={UsersCreate} />
     </Route>
   </Router>
 ), document.getElementById('app'));
