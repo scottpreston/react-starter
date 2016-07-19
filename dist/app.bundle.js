@@ -60,18 +60,36 @@
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
-	var _routes = __webpack_require__(260);
+	var _MainLayout = __webpack_require__(260);
 
-	var _routes2 = _interopRequireDefault(_routes);
+	var _MainLayout2 = _interopRequireDefault(_MainLayout);
+
+	var _Home = __webpack_require__(261);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	var _UserContainer = __webpack_require__(262);
+
+	var _UserContainer2 = _interopRequireDefault(_UserContainer);
+
+	var _UserDetails = __webpack_require__(265);
+
+	var _UserDetails2 = _interopRequireDefault(_UserDetails);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var store = (0, _configureStore2.default)();
 
 	(0, _reactDom.render)(_react2.default.createElement(
-	  _reactRedux.Provider,
-	  { store: store },
-	  _react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: _routes2.default })
+	  _reactRouter.Router,
+	  { history: _reactRouter.browserHistory },
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { component: _MainLayout2.default, store: store },
+	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/users', component: _UserContainer2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/users/:id', component: _UserDetails2.default })
+	  )
 	), document.getElementById('app'));
 
 /***/ },
@@ -28253,18 +28271,32 @@
 
 	var _actionTypes = __webpack_require__(259);
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 	var rootReducer = function rootReducer(initialState, action) {
 	  var reducer = [];
-	  reducer[_actionTypes.ADD_USER] = function () {
-	    return action.list;
+	  console.log(initialState, action);
+	  reducer[_actionTypes.GET_LIST] = function () {
+	    var newList = action.users; // get data from action
+	    console.log('newlist', newList);
+	    return {
+	      users: newList
+	    }; // new state
 	  };
+
+	  reducer[_actionTypes.ADD_USER] = function () {
+	    var newUser = action.user; // get data from action
+	    return { users: [].concat(_toConsumableArray(initialState.users), [newUser]) }; // return new state
+	  };
+
 	  reducer[_actionTypes.CREATE_USER] = function () {
 	    return action.user;
 	  };
+
 	  if (reducer[action.type]) {
 	    return reducer[action.type]();
 	  } else {
-	    return [];
+	    return { users: [] };
 	  }
 	};
 
@@ -28281,47 +28313,10 @@
 	});
 	var ADD_USER = exports.ADD_USER = 'ADD_USER';
 	var CREATE_USER = exports.CREATE_USER = 'CREATE_USER';
+	var GET_LIST = exports.GET_LIST = 'GET_LIST';
 
 /***/ },
 /* 260 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	      value: true
-	});
-
-	var _reactRouter = __webpack_require__(196);
-
-	var _MainLayout = __webpack_require__(261);
-
-	var _MainLayout2 = _interopRequireDefault(_MainLayout);
-
-	var _Home = __webpack_require__(262);
-
-	var _Home2 = _interopRequireDefault(_Home);
-
-	var _Users = __webpack_require__(263);
-
-	var _Users2 = _interopRequireDefault(_Users);
-
-	var _UserDetails = __webpack_require__(265);
-
-	var _UserDetails2 = _interopRequireDefault(_UserDetails);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = React.createElement(
-	      _reactRouter.Route,
-	      { component: _MainLayout2.default },
-	      React.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
-	      React.createElement(_reactRouter.Route, { path: '/users', component: _Users2.default }),
-	      React.createElement(_reactRouter.Route, { path: '/users/:id', component: _UserDetails2.default })
-	);
-
-/***/ },
-/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28358,6 +28353,8 @@
 	  _createClass(MainLayout, [{
 	    key: 'render',
 	    value: function render() {
+	      var myChild = _react2.default.cloneElement(this.props.children, { store: this.props.route.store });
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -28386,7 +28383,7 @@
 	            null,
 	            'Body Content'
 	          ),
-	          this.props.children
+	          myChild
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -28404,7 +28401,7 @@
 	exports.default = MainLayout;
 
 /***/ },
-/* 262 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28457,7 +28454,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 263 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28476,7 +28473,152 @@
 
 	var _reactRedux = __webpack_require__(170);
 
-	var _actions = __webpack_require__(264);
+	var _actions = __webpack_require__(263);
+
+	var actions = _interopRequireWildcard(_actions);
+
+	var _redux = __webpack_require__(177);
+
+	var _actionTypes = __webpack_require__(259);
+
+	var types = _interopRequireWildcard(_actionTypes);
+
+	var _Users = __webpack_require__(264);
+
+	var _Users2 = _interopRequireDefault(_Users);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UserContainer = function (_React$Component) {
+	  _inherits(UserContainer, _React$Component);
+
+	  function UserContainer() {
+	    _classCallCheck(this, UserContainer);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(UserContainer).call(this));
+
+	    _this.state = { users: [] };
+	    _this.addUser = _this.addUser.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(UserContainer, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+
+	      var self = this;
+	      var store = this.props.store;
+	      $.getJSON('/data.json').done(function (data) {
+	        store.dispatch({ type: 'GET_LIST', users: data.list });
+	      });
+
+	      store.subscribe(function () {
+	        var state = store.getState();
+	        self.setState({
+	          users: state.users
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'addUser',
+	    value: function addUser() {
+	      var store = this.props.store;
+	      store.dispatch({
+	        type: 'ADD_USER',
+	        user: { name: "dummy dummy", email: 'dummy@icct.com' }
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_Users2.default, {
+	        users: this.state.users,
+	        addUser: this.addUser
+	      });
+	    }
+	  }]);
+
+	  return UserContainer;
+	}(_react2.default.Component);
+
+	// function mapStateToProps(state) {
+	//   console.log('containerState',state);
+	//   return {
+	//     users: state.users
+	//   };
+	// }
+	//
+	// function mapDispatchToProps(dispatch) {
+	//   return {
+	//     actions: bindActionCreators(actions, dispatch)
+	//   };
+	// }
+	//
+	// export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
+
+
+	exports.default = UserContainer;
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.getList = getList;
+	exports.addUser = addUser;
+	exports.createUser = createUser;
+
+	var _actionTypes = __webpack_require__(259);
+
+	var types = _interopRequireWildcard(_actionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function getList(list) {
+	  return { type: types.GET_LIST, users: list };
+	}
+
+	function addUser(user) {
+	  return { type: types.ADD_USER, user: user };
+	}
+
+	function createUser(user) {
+	  return { type: types.CREATE_USER, user: user };
+	}
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(196);
+
+	var _reactRedux = __webpack_require__(170);
+
+	var _actions = __webpack_require__(263);
 
 	var actions = _interopRequireWildcard(_actions);
 
@@ -28504,129 +28646,61 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Users).call(this, props));
 
-	    _this.state = { list: [] };
-	    _this.render = _this.render.bind(_this);
-	    _this.clickHandler = _this.clickHandler.bind(_this);
+	    _this.renderUser = _this.renderUser.bind(_this);
 	    _this.reduxDispatch = _this.reduxDispatch.bind(_this);
-	    _this.updateList = _this.updateList.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(Users, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var self = this;
-	      $.getJSON('/data.json').done(function (data) {
-	        //userList = data.list;
-	        self.setState({
-	          list: data.list
-	        });
-	      });
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var self = this;
-	      var list = this.state.list;
-
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
 	          'ul',
 	          null,
-	          list.map(function (item, i) {
-	            return _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/users/' + i },
-	                item.name
-	              ),
-	              ' - ',
-	              item.email
-	            );
-	          })
+	          ' ',
+	          this.props.users.map(this.renderUser),
+	          ' '
 	        ),
 	        _react2.default.createElement(
 	          'button',
-	          { onClick: self.clickHandler },
-	          'Test Clicker'
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: self.reduxDispatch },
+	          { onClick: this.reduxDispatch },
 	          'Dispatch'
 	        )
 	      );
 	    }
 	  }, {
-	    key: 'clickHandler',
-	    value: function clickHandler() {
-	      console.log('so this was a click event, now you can use a similar event to "save"', this.state);
-	      var tmpState = this.state.list;
-	      tmpState.push({ name: "hello world", email: 'hello@icct.com' });
-	      this.setState({ list: tmpState });
+	    key: 'renderUser',
+	    value: function renderUser(_ref, i) {
+	      var name = _ref.name;
+	      var email = _ref.email;
+
+	      return _react2.default.createElement(
+	        'li',
+	        { key: i },
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: '/users/' + i },
+	          name
+	        ),
+	        ' - ',
+	        email
+	      );
 	    }
 	  }, {
 	    key: 'reduxDispatch',
 	    value: function reduxDispatch() {
-	      console.log('dispatched...');
-	      var tmpState = this.state.list;
-	      var user = { name: "dummy dummy", email: 'dummy@icct.com', foo: 'aa' };
-	      tmpState.push(user);
-	      this.props.actions.addUser(tmpState);
-	    }
-	  }, {
-	    key: 'updateList',
-	    value: function updateList(user) {
-	      var tmpState = this.state.list;
-	      tmpState.push(user);
+	      var dummyUser = { name: "dummy dummy", email: 'dummy@icct.com' };
+	      this.props.addUser(dummyUser);
 	    }
 	  }]);
 
 	  return Users;
 	}(_react2.default.Component);
 
-	function mapStateToProps(state) {
-	  console.log(arguments);
-	  return { list: state };
-	}
-
-	function mapDispatchToProps(dispatch) {
-	  return {
-	    actions: (0, _redux.bindActionCreators)(actions, dispatch)
-	  };
-	}
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Users);
-
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.addUser = addUser;
-	exports.createUser = createUser;
-
-	var _actionTypes = __webpack_require__(259);
-
-	var types = _interopRequireWildcard(_actionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function addUser(list) {
-	  return { type: types.ADD_USER, list: list };
-	}
-
-	function createUser(user) {
-	  return { type: types.CREATE_USER, user: user };
-	}
+	exports.default = Users;
 
 /***/ },
 /* 265 */

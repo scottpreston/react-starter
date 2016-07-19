@@ -1,16 +1,13 @@
-import React from 'react'
-import {Hello} from '../src/components/Hello.js';
-import { assert } from 'chai'
+import React from 'react';
+import { render } from 'enzyme';
+import { expect } from 'chai'
 
-//var Hello = require('../src/Hello.es6');
+import Hello from '../src/components/Hello';
 
-describe('Hello', () => {
-
-  it('should work', () => {
-    var hello = <Hello />;
-    //TestUtils.renderIntoDocument(hello);
-    //expect(hello).toBeTruthy();
-     assert.isOk(hello);
+describe('<Hello />', () => {
+  it('renders a div with hello world', () => {
+    const wrapper = render(<Hello />);
+    expect(wrapper.text()).to.contain('hello world')
   });
 
 });

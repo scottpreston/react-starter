@@ -4,7 +4,7 @@ export default class Hello extends React.Component {
 
   constructor(props) {
    super(props);
-   this.state = {message:''};
+   this.state = {message:'hello world'};
    this.render = this.render.bind(this);
   }
 

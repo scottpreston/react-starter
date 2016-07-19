@@ -1,7 +1,11 @@
 import * as types from '../constants/actionTypes';
 
-export function addUser(list) {
-  return {type: types.ADD_USER, list: list};
+export function getList(list) {
+  return {type: types.GET_LIST, users: list};
+}
+
+export function addUser(user) {
+  return {type: types.ADD_USER, user: user};
 }
 
 export function createUser(user) {
