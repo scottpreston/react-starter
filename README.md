@@ -7,6 +7,8 @@ Starter project for React/Redux. Updated January 2017.
 To Install:
 
 ```bash
+npm install http-server -g
+npm install babel-cli -g
 npm install
 npm start
 ```
