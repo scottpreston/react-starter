@@ -86,7 +86,11 @@ webpack --config alt.config.js
 ### Installation
 
 ```bash
+// to install react
 npm install --save react react-dom
+
+// to work with webpack
+npm install --save babel-loader babel-preset-es2015 babel-preset-react
 ```
 
 Update .babelrc
