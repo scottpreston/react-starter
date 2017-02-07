@@ -10,15 +10,11 @@ tbd
 
 tbd
 
-## 2) Node Build Systems
+## 2) Advanced Basics
 
 tbd
 
-## 3) Additional Node Tooling
-
-tbd
-
-## 4) ES6 & ES6 Modules
+## 3) ES6 & ES6 Modules
 
 This will be an overview of the syntax changes and features of JavaScript. This section will use the references below as well as the [tutorials section](https://github.com/scottpreston/react-starter/tree/master/tutorial).
 
@@ -53,10 +49,55 @@ Please use the links below as references to the course materials.
 * [ES6 Promises](http://www.datchley.name/es6-promises/) - Promises to prevent nested callbacks and more readable code.
 * [ES6 Maps](https://ponyfoo.com/articles/es6-maps-in-depth) - New Data structures in ES6.
 
+## 4) Webpack
 
-## 5) JSX
+Installation
 
-* [JSX Introduction](
+```bash
+# to install
+npm install webpack -g
+# to upgrade
+npm upgrade webpack -g
+```
+Hello World (app.js, bar.js, bundle.js, index.html, webpack.config)
+
+CSS
+
+```bash
+npm install style-loader css-loader --save-dev
+```
+
+Code Splitting - See folder webpack2.
+
+command options:
+
+```bash
+webpack --optimize-minimize
+webpack -p // production same as optimize-minimize
+webpack -d // devmode
+webpack --watch
+webpack --config alt.config.js
+
+```
+
+
+## 5) React & JSX
+
+### Installation
+
+```bash
+npm install --save react react-dom
+```
+
+Update .babelrc
+
+```JavaScript
+{
+  "presets": ["es2015", "react"]
+}
+```
+
+[JSX Introduction](
 https://facebook.github.io/react/docs/introducing-jsx.html) Get a basic overview before juming right into React.
 
 ## 6) React
