@@ -1,0 +1,16 @@
+{
+  "list": [
+    {
+      "name": "Test User",
+      "email": "john.doe@email.com"
+    },
+    {
+      "name": "Foo Bar",
+      "email": "foo.bar@email.com"
+    },
+    {
+      "name": "Hello World",
+      "email": "hello.world@email.com"
+    }
+  ]
+}

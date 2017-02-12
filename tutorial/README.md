@@ -8,17 +8,30 @@ tbd
 
 ## 1) The Basics
 
-tbd
+### Tutorial Outline
 
-## 2) Advanced Basics
+1. HTML Basics
+2. CSS Basics
+3. JavaScript Basics
+4. HTTP & Rest
+5. Hello World JavaScript
 
-tbd
+### Online References
 
-## 3) ES6 & ES6 Modules
+* [http://www.w3schools.com/html/default.asp](http://www.w3schools.com/html/default.asp) - HTML overview
+* [http://www.w3schools.com/css/default.asp](http://www.w3schools.com/css/default.asp) - CSS Overview
+* [http://www.w3schools.com/bootstrap/default.asp](http://www.w3schools.com/bootstrap/default.asp) - Bootstrap Overview
+* [http://www.w3schools.com/js/default.asp](http://www.w3schools.com/js/default.asp) - JavaScript Overview
+* [http://www.learnhtml5book.com/](http://www.learnhtml5book.com/) - HTML5 & CSS3 (Shameless Plug)
+* [http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming](stackoverflow) - REST Description
+* [https://addyosmani.com/resources/essentialjsdesignpatterns/book/](JavaScript Design Patterns) - Online version of book.
+* [http://scottpreston.github.io/update/2016/12/07/more-hello-world-javascript.html](Hello World JavaScript) - Differences with app frameworks.
+
+## 2) ES6 & ES6 Modules
 
 This will be an overview of the syntax changes and features of JavaScript. This section will use the references below as well as the [tutorials section](https://github.com/scottpreston/react-starter/tree/master/tutorial).
 
-### Section Outline
+### Tutorial Outline
 
 1. Babel & Hello World
 2. constants
@@ -39,7 +52,7 @@ This will be an overview of the syntax changes and features of JavaScript. This 
 17. promises
 18. modules (export, import)
 
-#### Reference Links
+### Reference Links
 
 Please use the links below as references to the course materials.
 
@@ -49,9 +62,9 @@ Please use the links below as references to the course materials.
 * [ES6 Promises](http://www.datchley.name/es6-promises/) - Promises to prevent nested callbacks and more readable code.
 * [ES6 Maps](https://ponyfoo.com/articles/es6-maps-in-depth) - New Data structures in ES6.
 
-## 4) Webpack
+## 3) Webpack
 
-Installation
+###Installation
 
 ```bash
 # to install
@@ -80,8 +93,7 @@ webpack --config alt.config.js
 
 ```
 
-
-## 5) React & JSX
+## 5) React
 
 ### Installation
 
@@ -101,14 +113,42 @@ Update .babelrc
 }
 ```
 
-[JSX Introduction](
+### Tutorial Outline
+
+1. Easy Hello World
+2. Hello World with classes
+3. Components
+4. Working with State
+5. Adding CSS, Events, & Conditional Rendering
+6. Working with list
+7. Forms
+8. Communicating Between Components
+9. Ajax without Redux
+10. Linking without React-Router
+
+### References Links
+* [JSX Introduction](
 https://facebook.github.io/react/docs/introducing-jsx.html) Get a basic overview before juming right into React.
+* [Another React Introduction](
+  http://andrewhfarmer.com/
+)
+* [The Official React Documentation](
+  https://facebook.github.io/react/docs/hello-world.html
+)
 
-## 6) React
+## 6) React Router
 
-tbd
+### Installation
 
-## 7) ImmutableJS
+```bash
+npm install react-router --save
+```
+
+
+### Tutorial Outline
+
+### References Links
+
 
 tbd
 
