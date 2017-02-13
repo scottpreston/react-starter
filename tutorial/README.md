@@ -31,6 +31,7 @@ tbd
 * [http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming](stackoverflow) - REST Description
 * [https://addyosmani.com/resources/essentialjsdesignpatterns/book/](JavaScript Design Patterns) - Online version of book.
 * [http://scottpreston.github.io/update/2016/12/07/more-hello-world-javascript.html](Hello World JavaScript) - Differences with app frameworks.
+* [https://docs.npmjs.com/misc/scripts](https://docs.npmjs.com/misc/scripts) - NPM Scripts
 * [http://eslint.org](ESLint) - JavaScript Linting Package
 
 

@@ -1,0 +1,22 @@
+basics npm commands
+
+npm init - intialize a package.json
+npm install - installs packages
+npm install (-g) - installs globally
+npm install (--save) - installs and saves dependencies
+npm install (--save-dev) - installs and saves dependencies
+npm uninstall
+npm update
+npm ls
+npm search (package name)
+node version manager (n)
+
+package.json (npm scripts)
+
+"scripts": {
+    "lint": "eslint tutorial/1-basics/hello.js",
+    "start": "http-server -p 5000 --cors -o public"
+  },
+
+  npm start, test, prestart, etc.
+  npm run lint
