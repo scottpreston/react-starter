@@ -150,13 +150,17 @@ Update .babelrc
 npm install react-router --save
 ```
 
-
 ### Tutorial Outline
+
+1. Hello World
+2. Paramters
+3. Layouts
 
 ### References Links
 
-
-tbd
+* [Official React-Router](https://github.com/ReactTraining/react-router) 
+* [React Router Tutorial](https://github.com/reactjs/react-router-tutorial)
+* [React Router Guides / Apis](https://github.com/ReactTraining/react-router/tree/master/docs)
 
 ## 6) Redux
 
