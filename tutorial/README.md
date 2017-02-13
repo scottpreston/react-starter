@@ -2,10 +2,6 @@
 
 Everything you want to know to become an expert in React/Redux.
 
-##Book References
-
-tbd
-
 ## 1) The Basics
 
 ### Tutorial Outline
