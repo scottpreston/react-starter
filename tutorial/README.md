@@ -15,6 +15,11 @@ tbd
 3. JavaScript Basics
 4. HTTP & Rest
 5. Hello World JavaScript
+6. OO JavaScript & Functional Patterns
+7. NodeJS (Server Side JS)
+8. NPM (Node Package Manager)
+9. NPM Scripts
+10. ESLint
 
 ### Online References
 
@@ -26,6 +31,8 @@ tbd
 * [http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming](stackoverflow) - REST Description
 * [https://addyosmani.com/resources/essentialjsdesignpatterns/book/](JavaScript Design Patterns) - Online version of book.
 * [http://scottpreston.github.io/update/2016/12/07/more-hello-world-javascript.html](Hello World JavaScript) - Differences with app frameworks.
+* [http://eslint.org](ESLint) - JavaScript Linting Package
+
 
 ## 2) ES6 & ES6 Modules
 
@@ -93,7 +100,7 @@ webpack --config alt.config.js
 
 ```
 
-## 5) React
+## 4) React
 
 ### Installation
 
@@ -136,7 +143,7 @@ https://facebook.github.io/react/docs/introducing-jsx.html) Get a basic overview
   https://facebook.github.io/react/docs/hello-world.html
 )
 
-## 6) React Router
+## 5) React Router
 
 ### Installation
 
@@ -152,14 +159,14 @@ npm install react-router --save
 
 tbd
 
-## 8) Redux
+## 6) Redux
 
 tbd
 
-## 9) Testing React
+## 7) Testing React
 
 tbd
 
-## 10) Creating A Sample Project
+## 8) Creating A Sample Project
 
 tbd
