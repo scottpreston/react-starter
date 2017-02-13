@@ -1,3 +1,10 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
 }
+h3{float:right;border:1px solid green;clear:both;}
+h3.h {color:red;}
+.b {
+    text-decoration: underline;
+}
+
+.a {margin-left:100px;}

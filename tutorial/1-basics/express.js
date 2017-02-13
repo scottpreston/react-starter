@@ -6,9 +6,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/hello', function (req, res) {
-  res.send('Hi ABB!')
+  res.send({foo:"bar"});
 });
-
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

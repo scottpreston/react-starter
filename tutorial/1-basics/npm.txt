@@ -5,8 +5,8 @@ npm install - installs packages
 npm install (-g) - installs globally
 npm install (--save) - installs and saves dependencies
 npm install (--save-dev) - installs and saves dependencies
-npm uninstall
-npm update
+npm uninstall [name of package]
+npm update [name of package]
 npm ls
 npm search (package name)
 node version manager (n)
@@ -18,5 +18,5 @@ package.json (npm scripts)
     "start": "http-server -p 5000 --cors -o public"
   },
 
-  npm start, test, prestart, etc.
-  npm run lint
+npm start, test, prestart, etc.
+npm run lint
