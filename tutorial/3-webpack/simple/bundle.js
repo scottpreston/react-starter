@@ -82,8 +82,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../node_modules/css-loader/index.js!./my.css", function() {
-			var newContent = require("!!./../../node_modules/css-loader/index.js!./my.css");
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js!./my.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js!./my.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -113,7 +113,7 @@ exports = module.exports = __webpack_require__(3)();
 
 
 // module
-exports.push([module.i, "body {\n  font-family: arial;\n  color: green;\n}\n", ""]);
+exports.push([module.i, "body {\n  font-family: arial;\n  color: red;\n}\n", ""]);
 
 // exports
 
@@ -440,6 +440,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__bar__["a" /* default */])();
 
+function hi() {
+    console.log('hi hi')
+}
+
+hi();
 
 /***/ })
 /******/ ]);

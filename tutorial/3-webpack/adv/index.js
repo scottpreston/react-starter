@@ -1,2 +1,3 @@
 var j = require('jquery');
-j("#hello").css('color','red');
+var b = require('bootstrap');
+j("#hello").css('color','green');
