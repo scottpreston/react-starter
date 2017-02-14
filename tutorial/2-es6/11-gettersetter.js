@@ -14,3 +14,4 @@ let a = new Hello();
 a.name = "scott";
 a.hello();
 console.log(a.name);
+console.log(a._name);

@@ -24,17 +24,24 @@ console.log(s, s.hasOwnProperty(size), s[size]);
 var target = {
   hello: function() {
     console.log('TARGET, hello world');
+  },
+  foo: function() {
+    console.log('bar');
   }
 };
 var handler = {};
 
-var proxy = new Proxy(target, handler);
+var proxy = new Proxy(target, {hello: function() {
+  console.log('proxy');
+}
+});
 
 proxy.hello = function () {
   console.log('PROXY, HELLO WORLD!');
 };
 
 target.hello();
+target.foo();
 
 // reflect
 

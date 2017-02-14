@@ -3,5 +3,5 @@
 let u = new Uint8Array(1);
 u[0] = 128;
 console.log(u[0]);
-u[0] = u[0] + 128;
+u[0] = u[0] + 130;
 console.log(u[0]);

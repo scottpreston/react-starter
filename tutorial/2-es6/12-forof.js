@@ -1,5 +1,11 @@
-let list = [1,2,3,4,5];
+let list = [1,2,,,,4,5];
 
-for (let value of list) {
+let a = new Set()
+a.add(1)
+a.add("f")
+console.log(a);
+
+for (let value of a) {
   console.log(value);
 }
+

@@ -11,8 +11,13 @@ function ajax(cb) {
   },1000);
 }
 
-//invoke old way
+// //invoke old way
 ajax(adder);
 
-// arrow version
-ajax(v => v + 1)
+// anon function
+ajax(function(i) {  
+  return i+1;
+});
+
+// // arrow version
+ajax(i => i + 1);
