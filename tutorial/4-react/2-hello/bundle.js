@@ -9487,11 +9487,16 @@ var Welcome = function (_React$Component) {
   _createClass(Welcome, [{
     key: 'render',
     value: function render() {
+      var i = Math.PI;
       return _react2.default.createElement(
         'h1',
         null,
         'Hello, ',
-        this.props.name
+        this.props.name,
+        ', ',
+        this.props.email,
+        ', ',
+        i
       );
     }
   }]);
@@ -21752,7 +21757,7 @@ var _welcome2 = _interopRequireDefault(_welcome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_welcome2.default, { name: 'scott' }), document.getElementById('test'));
+_reactDom2.default.render(_react2.default.createElement(_welcome2.default, { name: 'scott', email: 'spreston@icct.com' }), document.getElementById('test'));
 
 /***/ })
 /******/ ]);
