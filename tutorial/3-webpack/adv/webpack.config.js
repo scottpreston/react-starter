@@ -2,7 +2,7 @@ module.exports = function() {
     return {
       entry: {
         'app': ['./index.js'],
-        'vendor': ['moment', 'jquery','bootstrap']
+        'vendor': ['moment', 'jquery']
         },
         output: {
           filename: '[name].bundle.js',

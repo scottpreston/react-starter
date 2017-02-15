@@ -99,6 +99,12 @@ webpack --config alt.config.js
 
 ```
 
+### Tutorial Outline
+
+1. Simple examples
+2. Examples with Code Splitting
+3. Code Challenge 
+
 ### Reference Links
 
 * [Webpack2](https://webpack.js.org/) - Official Documentation
@@ -135,12 +141,15 @@ Update .babelrc
 8. Communicating Between Components
 9. Ajax without Redux
 10. Linking without React-Router
+11. Coding Challenge
 
 ### References Links
 
+* [Introduction To Flux](https://facebook.github.io/flux/)
 * [JSX Introduction](https://facebook.github.io/react/docs/introducing-jsx.html) - Get a basic overview before juming right into React.
 * [Another React Introduction](http://andrewhfarmer.com/)
 * [The Official React Documentation](https://facebook.github.io/react/docs/hello-world.html)
+* [AirBNB Style Guide](https://github.com/airbnb/javascript/tree/master/react#basic-rules)
 
 ## 5) React Router
 
@@ -155,6 +164,7 @@ npm install react-router --save
 1. Hello World
 2. Paramters
 3. Layouts
+4. Challenge
 
 ### References Links
 
@@ -164,12 +174,27 @@ npm install react-router --save
 
 ## 6) Redux
 
+### Installation
+
+```bash
+npm install react-redux  --save
+```
+
+### Tutorial Outline
+
+1. Vanilla (Very Simple Example)
+2. Counter
+3. Hello-Redux
+
+### References Links
+
+* [Official Redux Site](http://redux.js.org/) 
+* [Hello Redux] (https://github.com/scottpreston/hello-redux)
+
+## 7) Immutable JS
+
 tbd
 
-## 7) Testing React
-
-tbd
-
-## 8) Creating A Sample Project
+## 8) Testing React
 
 tbd

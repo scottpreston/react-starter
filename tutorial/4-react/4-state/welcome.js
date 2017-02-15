@@ -10,6 +10,8 @@ export default class Welcome extends React.Component {
   tick() {
     let count  = this.state.counter + 1;
     this.setState({counter:count});
+    // Wrong
+    //this.state.counter = count;
   }
   render() {
     return <h1 onClick={this.tick}>Hello, {this.props.name} - {this.state.counter}</h1>;
