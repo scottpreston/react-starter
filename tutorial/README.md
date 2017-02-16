@@ -185,6 +185,8 @@ npm install redux react-redux  --save
 1. Vanilla (Very Simple Example)
 2. Counter
 3. Hello-Redux
+4. Connecting Redux
+5. Challenge
 
 ### References Links
 
