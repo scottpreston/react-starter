@@ -26666,6 +26666,13 @@ var App = function (_React$Component) {
           { to: '/hello2' },
           'Hello 2'
         ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          _reactRouter.Link,
+          { to: '/ajsdhkajshdkjashdkjahdkjahsjkdash' },
+          'asdasjdhajsdghjasgdja'
+        ),
+        _react2.default.createElement('br', null),
         _react2.default.createElement('hr', null),
         this.props.children
       );
@@ -26691,7 +26698,8 @@ _reactDom2.default.render(_react2.default.createElement(
     { path: '/', component: App },
     _react2.default.createElement(_reactRouter.IndexRoute, { component: Index }),
     _react2.default.createElement(_reactRouter.Route, { path: 'hello1', component: _hello2.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: 'hello2', component: _hello4.default })
+    _react2.default.createElement(_reactRouter.Route, { path: 'hello2', component: _hello4.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '**', component: Index })
   )
 ), document.getElementById('test'));
 

@@ -12,7 +12,8 @@ class App extends React.Component {
     return (
     <div>Hi This is App<br/>
       <Link to="/hello1">Hello 1</Link><br/>
-      <Link to="/hello2">Hello 2</Link>
+      <Link to="/hello2">Hello 2</Link><br/>
+      <Link to="/ajsdhkajshdkjashdkjahdkjahsjkdash">asdasjdhajsdghjasgdja</Link><br/>
       <hr/>
       {this.props.children}
     </div>
@@ -33,6 +34,7 @@ ReactDOM.render(
         <IndexRoute component={Index} />
         <Route path="hello1" component={Hello1} />
         <Route path="hello2" component={Hello2} />
+        <Route path="**" component={Index} />
     </Route>
   </Router>
     ),
