@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './welcome';
-import { Router, Route, hashHistory } from 'react-router'
-import { Link } from 'react-router'
+import Hello from './hello';
+import { Router, Route, hashHistory, Link } from 'react-router';
 
 function App() {
   return (
     <div>Hi This is App 1<br/>
-      <Link to="/hello/scott">Hello Scott</Link>
-      <Link to="/hello/josh">Hello Josh</Link>
+      <Link to="/hello/scott">Hello Scott</Link><br/>
+      <Link to="/hello/josh">Hello Josh</Link><br/>
       <Link to="/hello/tim">Hello Tim</Link>
     </div>
   );

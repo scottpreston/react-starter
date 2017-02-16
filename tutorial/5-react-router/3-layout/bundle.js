@@ -26691,8 +26691,7 @@ _reactDom2.default.render(_react2.default.createElement(
     { path: '/', component: App },
     _react2.default.createElement(_reactRouter.IndexRoute, { component: Index }),
     _react2.default.createElement(_reactRouter.Route, { path: 'hello1', component: _hello2.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: 'hello2', component: _hello4.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '*', component: Index })
+    _react2.default.createElement(_reactRouter.Route, { path: 'hello2', component: _hello4.default })
   )
 ), document.getElementById('test'));
 

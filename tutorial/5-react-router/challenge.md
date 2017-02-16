@@ -14,7 +14,6 @@ render((
         <Route path="about" component={About}/>
         <Route path="users" component={Users}>
         <Route path="/user/:userId" component={UserDetail}/>
-        <Route path="*" component={Index}/>
       </Route>
     </Route>
   </Router>

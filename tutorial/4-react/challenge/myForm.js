@@ -19,6 +19,7 @@ export default class MyForm extends React.Component {
     event.preventDefault();
     var state = this.state;
     this.props.updateNames(state);
+    this.setState({name: '', email : ''});
   }
 
   render() {

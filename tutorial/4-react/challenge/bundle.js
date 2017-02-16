@@ -9501,7 +9501,7 @@ var MyForm = function (_React$Component) {
       event.preventDefault();
       var state = this.state;
       this.props.updateNames(state);
-      //this.setState({name:'',email:''});
+      this.setState({ name: '', email: '' });
     }
   }, {
     key: 'render',

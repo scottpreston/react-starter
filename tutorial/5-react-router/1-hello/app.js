@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Welcome from './welcome';
-import { Router, Route, hashHistory } from 'react-router'
-import { Link } from 'react-router'
+import { Router, Route, hashHistory, Link } from 'react-router';
 
 function App() {
   return (

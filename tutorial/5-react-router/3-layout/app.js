@@ -33,7 +33,6 @@ ReactDOM.render(
         <IndexRoute component={Index} />
         <Route path="hello1" component={Hello1} />
         <Route path="hello2" component={Hello2} />
-        <Route path="*" component={Index} />
     </Route>
   </Router>
     ),
