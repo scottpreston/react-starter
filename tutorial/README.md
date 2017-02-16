@@ -177,7 +177,7 @@ npm install react-router --save
 ### Installation
 
 ```bash
-npm install react-redux  --save
+npm install redux react-redux  --save
 ```
 
 ### Tutorial Outline
