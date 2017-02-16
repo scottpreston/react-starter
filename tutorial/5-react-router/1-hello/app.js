@@ -24,6 +24,6 @@ ReactDOM.render(
     <Router history={hashHistory}>
     <Route path="/" component={App}/>
     <Route path="/app2" component={App2}/>
-  </Router>,
+    </Router>,
   document.getElementById('test')
 );

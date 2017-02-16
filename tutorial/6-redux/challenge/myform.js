@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {connect} from 'react-redux';
 
-export default class MyForm extends React.Component {
+class MyForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -18,16 +19,16 @@ export default class MyForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    var state = this.state;
-    this.props.updateNames(state);
+    let {dispatch} = this.props;
+    dispatch({ type: 'ADD', user: this.state});
     this.setState({name: '', email : ''});
-
+    this.props.router.push('/');
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>My Form</h1>
+        <h1>{this.props.title}</h1>
          <label>
            Name:
            <input type="text" value={this.state.name} ref="name" onChange={this.handleChange} />
@@ -41,3 +42,5 @@ export default class MyForm extends React.Component {
     );
   }
 }
+
+export default connect(state => ({ names: state.names }))(MyForm);
