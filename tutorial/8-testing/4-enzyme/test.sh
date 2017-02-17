@@ -1,0 +1,1 @@
+babel-node $(npm bin)/_mocha spec.js 

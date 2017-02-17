@@ -195,8 +195,51 @@ npm install redux react-redux  --save
 
 ## 7) Immutable JS
 
-tbd
+### Tutorial Outline
+
+1. Simple Overview of Set and Map
+
+### Advanced Topics 
+
+There's some libraries that show how to use Redux with ImmutableJS and combine some of the stuff you are doing
 
 ## 8) Testing React
 
-tbd
+### Tutorial Outline
+
+1. Unit Testing JavaScript 
+2. Testing ES6 - Mocha/Chai
+3. Getting Coverage ES6
+4. Testing with Jest
+5. Testing with Enzyme
+
+### Reference Links
+
+* [Mocha](https://mochajs.org/)
+* [Chai](http://chaijs.com/)
+* [Fetch] (https://davidwalsh.name/fetch)
+* [NodeFetch] (https://www.npmjs.com/package/node-fetch)
+* [Enzyme](https://github.com/airbnb/enzyme)
+* [nyc](https://github.com/istanbuljs/nyc)
+
+## Prepping For Lab Next Week.
+
+* Component Design Discussion
+* Advanced Topics
+  * [https://github.com/gajus/redux-immutable](https://github.com/gajus/redux-immutable)
+  * [https://github.com/reactjs/react-router-redux](https://github.com/reactjs/react-router-redux)
+  * More With Connect
+  * Browser Testing with Karma
+
+### App Overview
+
+* You will host app locally or in s3.
+* App will have a REST api in the cloud
+  * /login, /logout, /register, /account, /forgotpass, /changepass
+  * GET /heros - get list of heros
+  * POST /hero - create new hero
+  * GET /hero/:id - get hero data for hero = id
+  * PUT /hero/:id - update hero data for hero = id
+  * POST /powers - create power list for heros
+  * POST /abilities - create abilities list for heros
+* tbd...
