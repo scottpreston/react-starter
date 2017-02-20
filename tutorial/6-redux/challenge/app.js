@@ -13,11 +13,11 @@ const store = createStore(reducer);
 ReactDOM.render(
   <Provider store={store}>
       <Router history={browserHistory} >
-        <Route path="/">
-          <IndexRoute component={AppContainer} />
-          <Route path="add" component={MyForm} />
-      </Route>
-  </Router>
+          <Route path="/">
+            <IndexRoute component={AppContainer} />
+            <Route path="add" component={MyForm} />
+        </Route>
+      </Router>
   </Provider>,
   document.getElementById('root')
 );

@@ -4,7 +4,7 @@ let s = new Set()
 s.add("hello").add("world")
 console.log(s.size)
 console.log(s);
-s.add("hello")
+s.add("hello1")
 console.log(s.size)
 console.log(s);
 
@@ -12,7 +12,7 @@ console.log('---- immutable set ----');
 var set2 = Immutable.Set(['hello','world']);
 console.log(set2.size)
 console.log(set2);
-set2.add('hello');
+set2.add('hello1');
 console.log(set2.size)
 console.log(set2);
 

@@ -1,5 +1,6 @@
 import {Foo, Fetcher} from '../o.js';
-var chai = require('chai');
+import chai from 'chai';
+//var chai = require('chai');
 var expect = chai.expect;
 
 describe('oo.js async', function() {

@@ -225,11 +225,15 @@ There's some libraries that show how to use Redux with ImmutableJS and combine s
 ## Prepping For Lab Next Week.
 
 * Component Design Discussion
-* Advanced Topics
+* Advanced Topics (Discussed a little each next week)
   * [https://github.com/gajus/redux-immutable](https://github.com/gajus/redux-immutable)
   * [https://github.com/reactjs/react-router-redux](https://github.com/reactjs/react-router-redux)
   * More With Connect
   * Browser Testing with Karma
+  * Testing with Jest
+  * Alternate REST APIs (Fetch, Axios)
+  * More Webpack Configurations
+  * Practical ESLint Configurations
 
 ### App Overview
 
