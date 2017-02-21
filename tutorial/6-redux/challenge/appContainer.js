@@ -39,11 +39,13 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    const listofNames = this.props.names.map((user,idx) =>
-      <li key={idx}>{user.name} -- {user.email} <a onClick={this.deleteUser} className={idx}>remove</a></li>
+    const listofNames = this.props.names.map((user,idx) => 
+      <li key={idx}>{user.name} -- {user.email} <a onClick={this.deleteUser} className={idx}>remove</a> , 
+      <Link to={`/hello/${user.name}`}> Hello </Link></li>
     );
     return (
     <div>
+  
       <Link to="add">Add User</Link>
       <ul>{listofNames}</ul>
     </div>);
