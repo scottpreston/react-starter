@@ -221,6 +221,7 @@ There's some libraries that show how to use Redux with ImmutableJS and combine s
 * [NodeFetch] (https://www.npmjs.com/package/node-fetch)
 * [Enzyme](https://github.com/airbnb/enzyme)
 * [nyc](https://github.com/istanbuljs/nyc)
+* [TDD React-Redux](http://engineering.pivotal.io/post/tdding-react-and-redux/)
 
 ## Prepping For Lab Next Week.
 
