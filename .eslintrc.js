@@ -1,7 +1,7 @@
 module.exports = {
-    "env" : {
+    "env": {
         "browser": true,
-        "node" : false
+        "node": false
     },
     "extends": "standard",
     "plugins": [

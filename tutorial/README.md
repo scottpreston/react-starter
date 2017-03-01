@@ -164,7 +164,9 @@ npm install react-router --save
 1. Hello World
 2. Paramters
 3. Layouts
-4. Challenge
+4. Connect
+5. Action Creators
+6. Challenge
 
 ### References Links
 
