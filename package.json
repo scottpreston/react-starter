@@ -31,7 +31,7 @@
   },
   "scripts": {
     "lint": "eslint tutorial/1-basics/hello.js",
-    "start": "http-server -p 5000 --cors -o public",
+    "start": "http-server -p 5000 --cors -o tutorial",
     "abb": "echo '123'",
     "test": "babel-node node_modules/isparta/bin/isparta cover --include tutorial/8-testing/3-coverage/*.js --report html node_modules/mocha/bin/_mocha -- tutorial/8-testing/3-coverage/test/*.js"
   },
@@ -45,6 +45,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
+    "extract-text-webpack-plugin": "^2.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0"
   },

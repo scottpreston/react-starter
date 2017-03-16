@@ -1,9 +1,11 @@
+import {MyActions} from './actions';
+
 export default (state, action) => {
   console.log(action);
   switch (action.type) {
-    case 'INIT':
+    case MyActions.INIT:
       return {names: action.names};
-    case 'ADD':
+    case MyActions.ADD:
       let oldNames = state.names;
       let newNames = Object.assign([], oldNames);
       newNames.push(action.user);

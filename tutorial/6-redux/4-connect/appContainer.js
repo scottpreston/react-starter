@@ -15,12 +15,14 @@ class AppContainer extends React.Component {
   init(list) {
     let {dispatch} = this.props;
     dispatch({ type: 'INIT', names: list });
-  }
+    //dispatch(initAction(list)); // use action function
+}
 
   addDummy(event) {
     event.preventDefault();
     let {dispatch} = this.props;
     dispatch({ type: 'ADD', user: {name:'dummy', email:'dummy@dummy.com'}});
+    
   }
 
   componentDidMount() {
